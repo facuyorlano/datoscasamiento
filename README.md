@@ -1,11 +1,17 @@
 # Facu & Pichu — Casamiento
-Dashboard responsive sin dependencias. Proveedores con rubro, contacto, moneda, importe contratado, pago acumulado, saldo y vencimiento. Presupuesto separado ARS/USD. Invitados con estado, mesa, menú, contacto y notas. Importación de nombres por línea; exportación CSV compatible con Excel (respeta filtros); respaldo/restauración JSON.
+Panel privado para proveedores, pagos, fondo disponible, regalos, gastos estimados y por presupuestar. Invitados con estado, adulto/menor, mesa, menú y exportación CSV. Comprobantes JPG, PNG y PDF hasta 2 MB por proveedor.
 
-## Ejecutar
-`python3 -m http.server 8000`
+## Arquitectura
+Frontend HTML/CSS/JS, Vercel Functions y Neon Postgres mediante Drizzle. Los datos privados y comprobantes permanecen en Neon; no se incluyen en el repositorio. Acceso mediante cookie firmada HttpOnly/Secure/SameSite y clave compartida. Las escrituras usan una versión para evitar sobrescribir cambios concurrentes. Usar Actualizar para traer cambios de otro dispositivo.
+
+## Configuración
+Variables de servidor: DATABASE_URL (Neon), ACCESS_PASSWORD, SESSION_SECRET (aleatoria de 32 bytes o más). Aplicar migrations/0001.sql al nuevo proyecto antes de usar. Cargar wedding_state con id=1 y el JSON de inicialización privado. No incluir secretos ni datos iniciales en Git.
 
 ## Vercel
-Importar este repositorio en Vercel, seleccionar Other, sin comando de build y directorio de salida raíz (`.`).
+Preset Other, raíz ./, sin build command. Node.js 22 o superior. Las funciones api/ se detectan automáticamente. No configurar datos privados en variables VITE_ ni NEXT_PUBLIC_.
 
-## Persistencia
-Esta primera versión guarda en localStorage del navegador. No sincroniza entre dispositivos. Descargar respaldo periódicamente. Los datos ingresados no se envían al repositorio ni a un servidor. Para uso compartido es necesario configurar una base de datos y autenticación antes de cargar información real en la nube.
+## Verificación
+`npm test` prueba firmas de sesión, rechazo de manipulación y validación de importes y estados. Probar persistencia y conflictos entre dos sesiones antes de publicar.
+
+## Datos monetarios
+No se mezclan ARS y USD. Los costos desconocidos son null, no cero. Regalos y pagos aparte no consumen el fondo disponible. El saldo de catering no se estima automáticamente hasta obtener el nuevo precio.
