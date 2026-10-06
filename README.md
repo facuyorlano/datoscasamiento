@@ -15,3 +15,10 @@ Preset Other, raíz ./, sin build command. Node.js 22 o superior. Las funciones 
 
 ## Datos monetarios
 No se mezclan ARS y USD. Los costos desconocidos son null, no cero. Regalos y pagos aparte no consumen el fondo disponible. El saldo de catering no se estima automáticamente hasta obtener el nuevo precio.
+
+## Dashboard de invitados
+
+Disponible en `/invitados` y en la sección Invitados del dashboard general.
+Incluye contadores configurables, filtros combinables, tarjetas o tabla, vistas guardadas en el navegador, edición múltiple y lista independiente para el civil.
+La vista Country exporta TXT o CSV solo con DNI, o nombre y DNI; excluye documentos faltantes, inválidos o repetidos. Catering exporta nombre, menú, edad y ubicación.
+Las respuestas sin vincular se revisan aparte y no se cuentan como personas adicionales hasta confirmar el cruce. Los campos opcionales `dni` (cadena de 7 u 8 dígitos) y `civil` (booleano) se conservan con el estado sincronizado en Neon.
