@@ -27,3 +27,5 @@ Las respuestas sin vincular se revisan aparte y no se cuentan como personas adic
 
 El salón admite ancho y profundidad entre 3 y 80 m, configurables desde el formulario o las cuatro esquinas. Las medidas iniciales (20 × 15 m) son solo una referencia. La cuadrícula representa metros; el zoom no modifica medidas guardadas.
 Cada espacio admite ancho, profundidad, movimiento, redimensionamiento desde esquinas y giro de 90°. Mesas, livings y mesa de novios reciben invitados; barra, DJ, fotos, pista, entrada y espacios personalizados son zonas sin asientos. Al achicar el salón se conservan las dimensiones de los elementos y se reubican dentro del borde. No se impiden superposiciones.
+
+El plano admite salón rectangular o en L, recorte en cualquiera de las cuatro esquinas, medidas exactas y arrastre de bordes exteriores e interiores. La superficie descuenta el recorte; los espacios se reubican dentro de los brazos sin cambiar su tamaño.
