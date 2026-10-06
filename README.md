@@ -22,3 +22,8 @@ Disponible en `/invitados` y en la sección Invitados del dashboard general.
 Incluye contadores configurables, filtros combinables, tarjetas o tabla, vistas guardadas en el navegador, edición múltiple y lista independiente para el civil.
 La vista Country exporta TXT o CSV solo con DNI, o nombre y DNI; excluye documentos faltantes, inválidos o repetidos. Catering exporta nombre, menú, edad y ubicación.
 Las respuestas sin vincular se revisan aparte y no se cuentan como personas adicionales hasta confirmar el cruce. Los campos opcionales `dni` (cadena de 7 u 8 dígitos) y `civil` (booleano) se conservan con el estado sincronizado en Neon.
+
+## Plano a escala
+
+El salón admite ancho y profundidad entre 3 y 80 m, configurables desde el formulario o las cuatro esquinas. Las medidas iniciales (20 × 15 m) son solo una referencia. La cuadrícula representa metros; el zoom no modifica medidas guardadas.
+Cada espacio admite ancho, profundidad, movimiento, redimensionamiento desde esquinas y giro de 90°. Mesas, livings y mesa de novios reciben invitados; barra, DJ, fotos, pista, entrada y espacios personalizados son zonas sin asientos. Al achicar el salón se conservan las dimensiones de los elementos y se reubican dentro del borde. No se impiden superposiciones.
